@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Configurações Globais e Variáveis
+   ========================================================================== */
+:root {
+  --color-primary: #60825A;
+  --color-secondary: #e9f5ff;
+  --color-secondary-hover: #d3ebff;
+  --color-text: #333;
+  --color-text-light: #555;
+  --color-text-strong: #111;
+  --color-white: #fff;
+  --color-light-gray: #f3f4f6;
+  --gradient-primary: linear-gradient(90deg, #304F51, #345D50, #42944C);
+  --gradient-premium: linear-gradient(90deg, #9333ea, #3b82f6);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px_12px rgba(0, 0, 0, 0.26);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.3);
+  --font-family-base: 'Arial', sans-serif;
+}
+
+/* ==========================================================================
+   Estilos de Componentes
+   ========================================================================== */
+/* Logo */
+.logo {
+  width: 50%;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Fundo do hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/img/paralax.avif') center/cover no-repeat;
+  min-height: 90vh;
+  color: white;
+  padding: 60px 0;
+  transition: transform 0.5s ease;
+}
+
+/* Parallax */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+/* Animação suave ao mover o mouse */
+.hero.active {
+  transform: scale(1.03);
+}
+
+/* Cards de benefícios */
+.card-beneficio {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 0.4s ease, transform 0.4s ease;
+  filter: brightness(0.85);
+}
+
+.card-beneficio:hover {
+  transform: scale(1.1) rotate(-1deg);
+  filter: brightness(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* Fade-in animation for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MAG Section */
+.mag {
+  background-color: var(--color-secondary);
+  transition: all 0.3s ease;
+}
+
+.mag:hover {
+  background-color: var(--color-secondary-hover);
+  transform: scale(1.01);
+}
+
+/* Cards */
+.plan-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  /* Ocupa a largura da coluna do Bootstrap */
+  font-family: var(--font-family-base);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.plan-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-card-header img {
+  max-height: 36px;
+}
+
+.plan-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  margin: 6px 0;
+}
+
+.plan-title small {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--color-white);
+}
+
+.badge-popular {
+  background: #ec4899;
+}
+
+.badge-premium {
+  background: var(--gradient-premium);
+}
+
+.badge-nacional {
+  background: #f43f5e;
+}
+
+.plan-info {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.plan-info strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-text-strong);
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 4px 0;
+}
+
+.tags span {
+  background: var(--color-light-gray);
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.plan-detail {
+  font-size: 13px;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+.plan-price {
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.plan-price strong {
+  font-size: 20px;
+  color: var(--color-text-strong);
+}
+
+/* Margin-top: auto empurra os botões para o final do card */
+.plan-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.color-grenn {
+  color: var(--gradient-primary);
+}
+
+.btn-primary {
+  flex: 1;
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(147, 51, 234, .3);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  flex: 1;
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  color: var(--color-text);
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--color-light-gray);
+}
+
+.footer-dark {
+  background: #0d1626; /* Azul bem escuro do print */
+}
+
+/* Overlay escuro */
+.hero-overlay {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* mesma intensidade do exemplo */
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;           /* abaixo do form, acima do site */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.hero-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animação de fade */
+#floatingForm {
+  display: none; /* ESCONDE de verdade */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s ease;
+}
+
+/* Quando ativo */
+#floatingForm.show {
+  display: flex !important; /* mostra */
+  opacity: 1;
+  visibility: visible;
+}
+
+#formCotacao {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease;
+}
+#formCotacao.show {
+  display: flex !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+#heroHiden {
+  transition: opacity 0.4s ease;
+}
+
+#heroHiden.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Estilos Responsivos
+   ================================================-========================= */
+/* Responsivo */
+@media (max-width: 768px) { /* reduz no tablet */
+  .hero {
+    text-align: center;
+  }
+
+  .card-beneficio:hover {
+    transform: scale(1.05);
+  }
+
+   .logo {
+    max-width: 140px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 15%; /* reduz no celular */
+  }
+  .teste{
+    max-width: 5%; /* reduz no celular */
+  }
+}
